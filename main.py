@@ -22,10 +22,7 @@ async def chat_page(request: Request):
     return templates.TemplateResponse("home.html", {"request": request, 'chat_responses': chat_responses})
 
 chat_log = [{'role': 'system',
-             'content': 'You are a Python tutor AI, completely dedicated to teach users how to learn  \
-                Python from scratch. Please provide clear instructions on Python concepts, \
-                best practices and syntax. Help create a path of learning for users to be able \
-                to create real life, production ready python applications.'}]
+             'content': ''}]
 
 @app.websocket("/ws")
 async def chat(websocket: WebSocket):
